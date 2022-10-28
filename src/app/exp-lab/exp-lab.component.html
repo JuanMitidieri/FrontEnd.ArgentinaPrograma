@@ -1,0 +1,43 @@
+<div class="acercade">
+    <div class="tituloedu">
+       <h1>Experiencia laboral
+       </h1> </div>
+       <button type="button" class="btn btn-dark" routerLink="/nuevaexp" *ngIf="isLogged">
+        <h3>Agregar Experiencia</h3>
+    </button>
+     
+    <div class="col lg 1"></div>
+    <div class="col-lg-10">
+      <table class="table">
+         <tbody>
+            <tr *ngFor="let Experiencia of expe">
+              <td><img class ="imagenmail" src={{Experiencia.imgE}}
+                alt="gmail"/></td>
+              <td><div class="explab">  {{Experiencia.nombreE}}</div></td>
+              <td><div class="explab">  {{Experiencia.descripcionE}}</div></td>
+              
+              <td *ngIf="isLogged"> <div class="button"> 
+                <button class="btn btn-outline-info" routerLink="/editexp/{{Experiencia.id}}">
+                    <i class="bi bi-pencil-fill"></i> EDITAR</button> </div>
+            </td>
+            <td *ngIf="isLogged"> <div class="button"> 
+              <button class="btn btn-danger" (click)="delete(Experiencia.id)">
+                  <i class="bi bi-trash-fill"></i> BORRAR</button> </div>
+          </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+   
+</div>
+
+
+<!-- 
+{{Experiencia.imgE}}
+
+{{Experiencia.nombreE}}
+{{Experiencia.descripcionE}}
+
+<img class ="imagenmail" src={{Experiencia.imgE}}
+        alt="gmail"/> 
+-->

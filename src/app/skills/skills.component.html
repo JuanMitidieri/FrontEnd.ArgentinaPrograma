@@ -1,0 +1,29 @@
+<div class="skillseidiomas">
+  <div>
+      <h2>Skills</h2>
+      <button type="button" class="btn btn-dark" routerLink="/nuevoskill" *ngIf="isLogged">
+        <h3>Agregar Educacion</h3>  </button>
+      </div>
+      
+      <div class="idiomas">
+      <div *ngFor="let Skills of skills">
+    
+       <div style="text-align: center"> <img class ="imgskills" src={{Skills.imgE}}
+        alt="español"/> <p>{{Skills.nombreE}} </p> 
+      
+        <div *ngIf="isLogged"> <div class="button"> 
+          <button class="btn btn-outline-info" routerLink="/editskill/{{Skills.id}}">
+              <i class="bi bi-pencil-fill"></i> </button> </div>
+            </div>
+            
+      <div *ngIf="isLogged"> <div class="button"> 
+        <button class="btn btn-danger" (click)="delete(Skills.id)">
+            <i class="bi bi-trash-fill"></i> </button> </div>
+      
+      </div>
+
+       
+      </div>
+    </div>
+  </div>
+</div>

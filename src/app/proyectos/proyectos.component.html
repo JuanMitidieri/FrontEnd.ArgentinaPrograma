@@ -1,0 +1,43 @@
+<div class="acercade">
+  <div class="tituloedu">
+     <h1>proyectos
+     </h1> </div>
+     <button type="button" class="btn btn-dark" routerLink="/nuevoproyecto" *ngIf="isLogged">
+      <h3>Agregar Proyecto</h3>
+  </button>
+   
+  <div class="col lg 1"></div>
+  <div class="col-lg-10">
+    <table class="table">
+       <tbody>
+          <tr *ngFor="let Proyecto of proyectos">
+            <td><img class ="imagenmail" src={{Proyecto.imgE}}
+              alt="gmail"/></td>
+            <td><div class="explab">  {{Proyecto.nombreE}}</div></td>
+            <td><div class="explab">  {{Proyecto.descripcionE}}</div></td>
+            
+            <td *ngIf="isLogged"> <div class="button"> 
+              <button class="btn btn-outline-info" routerLink="/editproyecto/{{Proyecto.id}}">
+                  <i class="bi bi-pencil-fill"></i> EDITAR</button> </div>
+          </td>
+          <td *ngIf="isLogged"> <div class="button"> 
+            <button class="btn btn-danger" (click)="delete(Proyecto.id)">
+                <i class="bi bi-trash-fill"></i> BORRAR</button> </div>
+        </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+ 
+</div>
+
+
+<!-- 
+{{Experiencia.imgE}}
+
+{{Experiencia.nombreE}}
+{{Experiencia.descripcionE}}
+
+<img class ="imagenmail" src={{Experiencia.imgE}}
+      alt="gmail"/> 
+-->
